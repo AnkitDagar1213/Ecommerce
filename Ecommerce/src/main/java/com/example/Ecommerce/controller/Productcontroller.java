@@ -20,17 +20,19 @@ public class Productcontroller {
         return ResponseEntity.ok().body(products);
     }
 
-    @PostMapping("")
+    @PostMapping("addProduct")
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
         Product newProduct = productservice.addProduct(product);
         return ResponseEntity.ok().body(newProduct);
     }
-    @GetMapping("/getAllProduct")
-    public List<Product> findAllProduct() {
-        return productservice.findAll();
+    @GetMapping("getAllProducts")
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> products = productservice.findAll();
+        return ResponseEntity.ok().body(products);
     }
-    @DeleteMapping("/deleteProduct")
-    public void deleteProduct(@RequestParam int Id) {
-        productservice.deleteproduct(Id);
+    @DeleteMapping("deleteProduct/{id}")
+    public ResponseEntity<?> delete_Product(@PathVariable(value = "id") Integer id) {
+        productservice.delete_Product(id);
+        return ResponseEntity.ok().build();
     }
 }
