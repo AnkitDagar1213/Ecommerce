@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Addresscontroller {
     @Autowired
-    private AddressRepository addressRepository;
-    @Autowired
     private Addressservice addressservice;
     @PostMapping("addAddress")
     public ResponseEntity<Address> addAddress(@RequestBody Address address) {
