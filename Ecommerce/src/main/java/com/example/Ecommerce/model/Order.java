@@ -1,6 +1,7 @@
 package com.example.Ecommerce.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,15 +16,17 @@ import lombok.NoArgsConstructor;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Order_Id")
     private Integer OrderId;
-    @JoinColumn
     @ManyToOne
+    @JoinColumn(name = "User_Id")
     private User UserId;
-    @JoinColumn
-    @ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "Address_Id")
     private Address AddressId;
-    @JoinColumn
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "Product_Id")
     private Product ProductId;
+    @Column(name = "product_quantity")
     private String productQuantity;
 }
