@@ -14,8 +14,6 @@ public class Orderservice {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
-    private Orderservice orderservice;
-    @Autowired
     private Addressservice addressservice;
     @Autowired
     private Productservice productservice;
