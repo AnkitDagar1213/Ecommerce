@@ -16,14 +16,13 @@ public class Productservice {
     public Optional<Product> getProductById(Integer id) {
         return productRepository.findById(id);
     }
-    public String deleteproduct(int Id) {
-        productRepository.deleteById(Id);
-        return "Deleted";
-    }
     public Optional<Product> getProductsByCategory(Integer Id) {
         return productRepository.findById(Id);
     }
     public Product addProduct(Product product) {
         return productRepository.save(product);
+    }
+    public void delete_Product(Integer id) {
+        productRepository.deleteById(id);
     }
 }
