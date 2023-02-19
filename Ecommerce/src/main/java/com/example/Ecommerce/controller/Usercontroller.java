@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 //http://localhost:8080/swagger-ui/index.html
 public class Usercontroller {
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
     private Userservice userservice;
     @PostMapping("/addUser")
     public User addUser(@RequestBody User user) {
