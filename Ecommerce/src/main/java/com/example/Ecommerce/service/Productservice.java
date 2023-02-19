@@ -20,4 +20,10 @@ public class Productservice {
         productRepository.deleteById(Id);
         return "Deleted";
     }
+    public Optional<Product> getProductsByCategory(Integer Id) {
+        return productRepository.findById(Id);
+    }
+    public Product addProduct(Product product) {
+        return productRepository.save(product);
+    }
 }
