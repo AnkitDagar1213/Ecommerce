@@ -13,7 +13,6 @@ public class Userservice {
     public User addUser(User user) {
         return userRepository.save(user);
     }
-
     public Optional<User> getUserById(Integer userId) {
         return userRepository.findById(userId);
     }
