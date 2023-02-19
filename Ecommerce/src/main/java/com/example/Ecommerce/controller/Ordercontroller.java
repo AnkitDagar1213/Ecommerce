@@ -22,15 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class Ordercontroller {
 
     @Autowired
-    private OrderRepository orderRepository;
-    @Autowired
     private Orderservice orderservice;
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private AddressRepository addressRepository;
     @PostMapping("Place_Order")
     public ResponseEntity<Order> placeOrder(@RequestParam(value = "userId") Integer userId,
                                             @RequestParam(value = "productId") Integer productId,
