@@ -45,11 +45,9 @@ The User entity has a one-to-many relationship with the Order entity, meaning th
 
 ## Data Structures Used:
 
-DTOs (Data Transfer Objects) - used to transfer data between the controller and service layers
+Repositories - used to transfer data between the controller and service layers
 
 Entities - used to model database tables and perform CRUD (Create, Read, Update, Delete) operations
-
-Repositories - used to perform database operations and communicate with the service layer
 
 Services - used to implement business logic and communicate with the repository layer
 
